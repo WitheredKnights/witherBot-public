@@ -7,20 +7,20 @@ const config = require("../../resources/config");
  * @param {Message} message 
  */
 module.exports = async (client, message) => {
-    
-    let logs = await client.channels.fetch(config.channels.logs);
+    // Replace 'config.channels.logs' with the actual ID of the logs channel.
+    let logs = await client.channels.fetch('config.channels.logs');
 
     // Anti deletion
-    if(message.channel.id == logs.id && message.author.id == client.user.id) {
+    if (message.channel.id == logs.id && message.author.id == client.user.id) {
         let embed = message.embeds[0];
         await message.channel.send({ embeds: [embed] });
         return;
     }
-    
+
     // Ignore bots
-    if(message.author.bot) return;
+    if (message.author.bot) return;
     // Ignore the logs channel
-    if(message.channel.id == logs.id) return;
+    if (message.channel.id == logs.id) return;
 
     // Send to logs
     let embed = new EmbedBuilder()
@@ -33,6 +33,6 @@ module.exports = async (client, message) => {
         .setImage(message.attachments.first()?.url || null)
         .setColor(0xFF0000)
         .setTimestamp();
-        
-    await logs.send({ embeds: [ embed ]});
-}
+
+    await logs.send({ embeds: [embed] });
+};
