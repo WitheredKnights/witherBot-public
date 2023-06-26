@@ -1,5 +1,4 @@
 const { Client, GatewayIntentBits, Partials, Collection, Presence, ActivityType } = require('discord.js');
-const config = require('../resources/config.js');
 const { readdirSync } = require('fs');
 
 const client = new Client({
@@ -9,7 +8,7 @@ const client = new Client({
 
 const path = __dirname;
 client.commands = new Collection();
-client.capybaras = readdirSync(path+'/../resources/imgs');
+client.capybaras = readdirSync(path + '/../resources/imgs');
 client.capybaraPath = path + '/../resources/imgs';
 
 const commands = readdirSync(path + '/commands').filter(e => e.endsWith('.js'));
@@ -26,8 +25,8 @@ for (let file of events) {
 }
 
 client.on('messageCreate', async (message) => {
-
-    let logs = await client.channels.fetch(config.channels.logs);
+    // Replace 'config.channels.logs' with the actual ID of the logs channel.
+    let logs = await client.channels.fetch('config.channels.logs');
 
     // Avoid flooding the logs channel.
     if (message.channel.id == logs.id && !message.author.bot) {
@@ -35,9 +34,10 @@ client.on('messageCreate', async (message) => {
     }
 
     // Command executor
-    if (!message.content.startsWith(config.bot.prefix)|| message.author.bot) return;
-    
-    let args = message.content.slice(config.bot.prefix.length).trim().split(/ +/g);
+    // Replace 'config.bot.prefix' with the actual prefix for your bot.
+    if (!message.content.startsWith('config.bot.prefix') || message.author.bot) return;
+
+    let args = message.content.slice('config.bot.prefix'.length).trim().split(/ +/g);
     let command = client.commands.get(args.shift().toLowerCase());
 
     if (command) {
@@ -45,7 +45,8 @@ client.on('messageCreate', async (message) => {
     }
 });
 
-client.login(config.bot.token).then(() => {
+// Replace 'config.bot.token' with your bot token.
+client.login('config.bot.token').then(() => {
     client.user.setPresence({
         activities: [{
             name: 'WitheredKnights', type: ActivityType.Playing
