@@ -1,10 +1,10 @@
 module.exports = {
     bot: {
-        token: 'MTA1NTg2ODM5NjM0MTgyOTczMw.GTkDlJ.k8rs2ItWRbxViHCsxKXqZdIziCYKgB2fBc1uiE',
+        token: 'enter_token_here',
         prefix: '!'
     },
     channels: {
-        logs: '1062316271401713735'
+        logs: 'enter_logs_channel_id_here'
     },
     links: {
         github: 'https://github.com/WitheredKnights',
