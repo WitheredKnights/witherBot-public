@@ -7,9 +7,10 @@ const config = require("../../resources/config");
  * @param {GuildBan} ban 
  */
 module.exports = async (client, ban) => {
-    let logs = await client.channels.fetch(config.channels.logs);
+    // Replace 'config.channels.logs' with the actual ID of the logs channel.
+    let logs = await client.channels.fetch('config.channels.logs');
 
-    if(logs) {
+    if (logs) {
         let audit = (await ban.guild.fetchAuditLogs({
             type: AuditLogEvent.MemberBanAdd,
             limit: 1
@@ -19,7 +20,7 @@ module.exports = async (client, ban) => {
             .setDescription(`${ban.user.username} has been banned by <@${audit.executor.id}>`)
             .addFields({ name: 'Reason', value: audit.reason || 'No reason provided', inline: true })
             .setColor(0xFFFF00)
-            .setTimestamp()
-        await logs.send({ embeds: [ embed ] });
+            .setTimestamp();
+        await logs.send({ embeds: [embed] });
     }
-}
+};
