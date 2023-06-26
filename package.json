@@ -1,0 +1,24 @@
+{
+  "name": "wither-bot",
+  "version": "1.0.0",
+  "description": "Discord bot for Withered Knights.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WitheredKnights/wither-bot.git"
+  },
+  "authors": "BearWasTaken, prime",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WitheredKnights/wither-bot/issues"
+  },
+  "homepage": "https://github.com/WitheredKnights/wither-bot#readme",
+  "dependencies": {
+    "@discordjs/builders": "^1.4.0",
+    "axios": "^1.2.2",
+    "discord.js": "^14.7.1"
+  }
+}
