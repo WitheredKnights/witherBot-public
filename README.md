@@ -1,26 +1,40 @@
 # Wither Bot
+## Description
 
-Discord      - https://dsc.gg/witheredknights
-<br>
-GitHub       - https://github.com/WitheredKnights/wither-bot/
-<br>
-Bot Token    - 
+📚 A feature-rich Discord bot built with Discord.js for handling various tasks and enhancing your Discord server experience.
+
+## Features
+
+✨ Here are some key features of the bot:
+
+- 🤖 Interactive and responsive commands.
+- ⚙️ Customizable prefix for command invocation.
+- 📝 Logging of important events in the logs channel.
+- 🚫 Anti-deletion feature to prevent accidental message deletion.
+- ℹ️ Detailed message deletion logging in the logs channel.
+- ⚙️ Easily configurable with the provided configuration file.
+- 📎 Useful links provided for GitHub, Discord, and website.
+
+## Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/WitheredKnights/my-awesome-discord-bot.git
+   ```
+
+2. Configure the bot
+ - Rename `config.example.js` to `config.js`
+ - Update the values in config.js with your bot token, prefix, and channel IDs.
+```bash
+npm start
 ```
-nope
-```
-LEV IS COOL
+
+## Links
+Useful Links
+ - [Discord](https://dsc.gg/witheredknights/)
+ - [GitHub Repository](https://github.com/WitheredKnights/witherBot-public/)
 
 
 
-# CMDS
-## ADDED COMMANDS
-!help - [help.js](https://github.com/WitheredKnights/wither-bot/blob/main/src/commands/help.js)
-<br>
-!ping - [ping.js](https://github.com/WitheredKnights/wither-bot/blob/main/src/commands/ping.js)
-<br>
-!link { EXPREMENTAL } - [link.js](https://github.com/WitheredKnights/wither-bot/blob/main/src/commands/link.js)
-## TO-ADD (maybe lol)
-!capybara - Sends picture of Capybara from [here](https://github.com/WitheredKnights/wither-bot/tree/main/resources/imgs)
-
-# ASSETS
-Capybara Images - https://github.com/Looskie/capybara-api { Manually Installed }
+   
